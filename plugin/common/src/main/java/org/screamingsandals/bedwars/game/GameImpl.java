@@ -407,7 +407,15 @@ public class GameImpl implements Game {
                     t.setTarget(target);
                 } else {
                     var bed = team.node("bed");
+                    var bed2 = team.node("bed2");
+                    var bed3 = team.node("bed3");
                     if (!bed.empty()) {
+                        t.setTarget(new TargetBlockImpl(MiscUtils.readLocationFromString(game.world, Objects.requireNonNull(bed.getString()))));
+                    }
+                    if (!bed2.empty()) {
+                        t.setTarget(new TargetBlockImpl(MiscUtils.readLocationFromString(game.world, Objects.requireNonNull(bed.getString()))));
+                    }
+                    if (!bed3.empty()) {
                         t.setTarget(new TargetBlockImpl(MiscUtils.readLocationFromString(game.world, Objects.requireNonNull(bed.getString()))));
                     }
                 }
